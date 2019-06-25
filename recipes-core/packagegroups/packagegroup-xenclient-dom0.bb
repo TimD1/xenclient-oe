@@ -63,6 +63,8 @@ RDEPENDS_${PN} = " \
     tpm-tools \
     tpm-tools-sa \
     xenclient-tpm-setup \
+	libtpms \
+	swtpm \
     pciutils-ids \
     acms \
     read-edid \
