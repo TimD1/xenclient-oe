@@ -2,7 +2,7 @@ DESCRIPTION = "The libtpms library provides software emulation of a Trusted Plat
 LICENSE = "IBM-TCG"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e73f0786a936da3814896df06ad225a9"
 
-DEPENDS = "automake autoconf libtool make gcc g++ libc-dev libssl"
+DEPENDS = "automake autoconf libtool make gcc g++ glibc libssl"
 
 PV = "0+git${SRCPV}"
 
