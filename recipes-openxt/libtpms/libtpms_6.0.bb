@@ -2,25 +2,18 @@ DESCRIPTION = "The libtpms library provides software emulation of a Trusted Plat
 LICENSE = "IBM-TCG"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e73f0786a936da3814896df06ad225a9"
 
-DEPENDS = "automake autoconf libtool make gcc glibc openssl"
+DEPENDS += "net-tools expect socat"
 
-PV = "git${SRCPV}"
+PV = "6.0+git${SRCPV}"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/stefanberger/libtpms.git;protocol=${OPENXT_GIT_PROTOCOL};branch=stable-0.6.0"
 
 S = "${WORKDIR}/git"
 
-inherit pkgconfig xenclient
+inherit autotools-brokensep pkgconfig
 
-do_configure() {
-    ${S}/autogen.sh --with-tpm2 --with-openssl --prefix=/usr
-}
+PACKAGECONFIG ?= "openssl"
+PACKAGECONFIG[openssl] = "--with-openssl, --without-openssl, openssl"
 
-do_compile() {
-    make
-}
-
-do_install() {
-    make install
-}
+BBCLASSEXTEND = "native"
