@@ -17,3 +17,5 @@ PACKAGECONFIG ?= "openssl"
 PACKAGECONFIG[openssl] = "--with-openssl, --without-openssl, openssl"
 
 BBCLASSEXTEND = "native"
+
+INSANE_SKIP_${PN} = "dev-so"
