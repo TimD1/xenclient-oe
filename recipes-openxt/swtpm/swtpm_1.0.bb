@@ -33,3 +33,4 @@ USERADD_PARAM_${PN} = "--system -g ${TSS_GROUP} --home-dir  \
     --no-create-home  --shell /bin/false ${BPN}"
 
 RDEPENDS_${PN} = "libtpms expect socat bash"
+INSANE_SKIP_${PN} = "dev-so"
