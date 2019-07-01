@@ -108,7 +108,7 @@ EXTRA_OECONF += " \
     --disable-gnutls \
     --disable-nettle \
     --disable-gcrypt \
-    --disable-tpm \
+    --enable-tpm \
     --enable-pie \
     --enable-werror \
     --enable-surfman \
