@@ -34,13 +34,13 @@ Index: seabios-1.9.1/src/tcgbios.c
 ===================================================================
 --- seabios-1.9.1.orig/src/tcgbios.c
 +++ seabios-1.9.1/src/tcgbios.c
-@@ -1157,9 +1157,6 @@
+@@ -509,9 +509,6 @@
+         return;
  
-     TPM_working = 1;
- 
+     tpm_acpi_init();
 -    if (runningOnXen())
 -        return;
 -
-     ret = tpm_startup();
-     if (ret)
-         return;
+     tpm_startup();
+ }
+

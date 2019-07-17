@@ -8,8 +8,8 @@ SRC_URI += " \
     file://only-boot-selected-devices.patch \
     file://gpu-pt-page-align-sections.patch \
     file://avoid-iPXE-rom-init-when-not-required.patch \
-    file://defconfig \
     file://initialize-tpm.patch \
+    file://defconfig \
 "
 
 do_configure() {
