@@ -1,5 +1,5 @@
---- seabios-1.9.1/src/tcgbios.c
-+++ seabios-1.9.1/src/tcgbios.c
+--- a/seabios-1.9.1/src/tcgbios.c
++++ b/seabios-1.9.1/src/tcgbios.c
 @@ -1157,9 +1157,6 @@
  
      TPM_working = 1;

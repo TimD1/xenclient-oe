@@ -1,5 +1,5 @@
---- tools/libacpi/build.c
-+++ tools/libacpi/build.c
+--- a/tools/libacpi/build.c
++++ b/tools/libacpi/build.c
 @@ -417,6 +417,10 @@
           (config->tis_hdr[1] == tis_signature[1]) &&
           (config->tis_hdr[2] == tis_signature[2]) )
