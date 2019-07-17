@@ -9,6 +9,7 @@ SRC_URI += " \
     file://gpu-pt-page-align-sections.patch \
     file://avoid-iPXE-rom-init-when-not-required.patch \
     file://defconfig \
+    file://initialize-tpm.patch \
 "
 
 do_configure() {

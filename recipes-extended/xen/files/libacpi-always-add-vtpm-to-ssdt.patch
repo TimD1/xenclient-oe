@@ -1,0 +1,13 @@
+--- build.c	2019-07-17 10:49:08.398702560 -0400
++++ new_build.c	2019-07-17 11:51:25.273629320 -0400
+@@ -417,6 +417,10 @@
+          (config->tis_hdr[1] == tis_signature[1]) &&
+          (config->tis_hdr[2] == tis_signature[2]) )
+     {
++		; // do nothing
++	}
++	if(true) // always add vtpm to ssdt
++	{
+         ssdt = ctxt->mem_ops.alloc(ctxt, sizeof(ssdt_tpm), 16);
+         if (!ssdt) return -1;
+         memcpy(ssdt, ssdt_tpm, sizeof(ssdt_tpm));

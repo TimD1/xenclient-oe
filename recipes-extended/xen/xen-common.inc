@@ -50,6 +50,7 @@ SRC_URI_append = " \
     file://disable-cpuid-hle-rtm.patch \
     file://allow-stubdoms-cacheattr-control.patch \
     file://add-xc-hypercall-page.patch \
+	file://libacpi-always-add-vtpm-to-ssdt.patch \
     file://libxl-do-not-destroy-in-use-tapdevs.patch \
     file://libxl-syslog.patch \
     file://libxl-RFC-4of7-Add-stubdomain-version-tools-domain-build-info.patch \
