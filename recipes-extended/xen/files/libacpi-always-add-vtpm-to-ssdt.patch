@@ -1,5 +1,5 @@
---- build.c	2019-07-17 10:49:08.398702560 -0400
-+++ new_build.c	2019-07-17 11:51:25.273629320 -0400
+--- tools/libacpi/build.c
++++ tools/libacpi/build.c
 @@ -417,6 +417,10 @@
           (config->tis_hdr[1] == tis_signature[1]) &&
           (config->tis_hdr[2] == tis_signature[2]) )

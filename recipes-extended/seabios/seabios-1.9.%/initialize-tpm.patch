@@ -1,5 +1,5 @@
---- tcgbios.c	2019-06-26 12:58:13.651965579 -0400
-+++ tcgbios_new.c	2019-07-17 12:17:09.356847324 -0400
+--- seabios-1.9.1/src/tcgbios.c
++++ seabios-1.9.1/src/tcgbios.c
 @@ -1157,9 +1157,6 @@
  
      TPM_working = 1;
