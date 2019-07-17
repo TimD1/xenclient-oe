@@ -1,5 +1,5 @@
-SRC_URI[md5sum] = "ac695c7cd7b615ce069e6623b55f07db"
-SRC_URI[sha256sum] = "5798b1f39267f54aacbb374a826984ea6b3bf08b0ffedfc1e71516dfedcd5bf6"
+SRC_URI[md5sum] = "aa522a2fc8f596fd71f51e581b7471dc"
+SRC_URI[sha256sum] = "4dbe2c9559ff68a61315efe4de2cb932396ede8c4a1df4b46b6fb0846cc59d5b"
 DESCRIPTION = "Convert XKB keymap to console keymap"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM="file://COPYRIGHT;md5=49cab1cfd397b014807c5b2bcc63e04f"
