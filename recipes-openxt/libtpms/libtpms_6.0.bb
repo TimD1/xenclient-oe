@@ -13,8 +13,9 @@ S = "${WORKDIR}/git"
 
 inherit autotools-brokensep pkgconfig
 
-PACKAGECONFIG ?= "openssl"
+PACKAGECONFIG ?= "openssl tpm2"
 PACKAGECONFIG[openssl] = "--with-openssl, --without-openssl, openssl"
+PACKAGECONFIG[tpm2] = "--with-tpm2, --without-tpm2, openssl"
 
 BBCLASSEXTEND = "native"
 
