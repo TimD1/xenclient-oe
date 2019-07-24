@@ -8,7 +8,6 @@ LONG DESCRIPTION:
 ################################################################################
 * Don't use "-vnc none" or "-net none", our version of QEMU doesn't support it
 * More QEMU option changes to satisfy our version
-* Add default vTPM support by creating TPM device for each QEMU instance
 
 ################################################################################
 CHANGELOG
@@ -16,7 +15,6 @@ CHANGELOG
 Authors:
 Martin Osterloh <osterlohm@ainfosec.com>
 Jed Lejosne <lejosnej@ainfosec.com>
-Tim Dunn <dunnt@ainfosec.com>
 
 ################################################################################
 REMOVAL
@@ -38,23 +36,12 @@ PATCHES
 ################################################################################
 --- a/tools/libxl/libxl_dm.c
 +++ b/tools/libxl/libxl_dm.c
-@@ -1168,17 +1168,26 @@ static int libxl__build_device_model_arg
+@@ -1168,17 +1168,15 @@ static int libxl__build_device_model_arg
                        "-xen-domid",
                        GCSPRINTF("%d", guest_domid), NULL);
  
 -    /* There is currently no way to access the QMP socket in the stubdom */
      if (!is_stubdom) {
-+        /* OpenXT: add vTPM */
-+        flexarray_append(dm_args, "-chardev");
-+        char socket_args[100];
-+        sprintf(socket_args, 
-+            "socket,id=chrtpm,path=/tmp/tpms/%.50s/swtpm-sock", c_info->name);
-+        flexarray_append(dm_args, socket_args);
-+        flexarray_append(dm_args, "-tpmdev");
-+        flexarray_append(dm_args, "emulator,id=tpm0,chardev=chrtpm");
-+        flexarray_append(dm_args, "-device");
-+        flexarray_append(dm_args, "tpm-tis,tpmdev=tpm0");
-+
 -        flexarray_append(dm_args, "-chardev");
 +        flexarray_append(dm_args, "-qmp");
          flexarray_append(dm_args,

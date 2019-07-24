@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Interposer for qemu upstream
-
 DOMID=$2
+UUID=`xec-vm -d $DOMID get uuid`
 
 # configure and use per-vm alsa pcm device with softvol control
 ALSA_VMID=$DOMID
@@ -41,4 +41,4 @@ export QEMU_ALSA_VOL_CTRL=vm-${ALSA_VMID}
 
 ARGS="$*"
 
-exec /usr/bin/qemu-system-i386 -chardev socket,id=chrtpm,path=/mytpm/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0 $ARGS
+exec /usr/bin/qemu-system-i386 -chardev socket,id=chrtpm,path=/tmp/tpms/$UUID/swtpm-sock -tpmdev emulator,id=tpm0,chardev=chrtpm -device tpm-tis,tpmdev=tpm0 $ARGS
